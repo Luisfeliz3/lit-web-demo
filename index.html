@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0A0A0A">
+  <meta name="description" content="Where is it LIT right now? Explore Luis Feliz’s interactive NYC nightlife portfolio demo.">
+  <meta property="og:title" content="LIT — Find your night"><meta property="og:description" content="Explore the interactive NYC nightlife demo. Built by Luis Feliz.">
+  <title>LIT — Find your night</title><link rel="stylesheet" href="./showcase/style.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="#demo" aria-label="LIT demo">LIT<span>🔥</span></a><span class="edition">WEB DEMO / NYC</span><a href="#built">Behind the build ↗</a></header>
+  <main>
+    <section class="intro"><p class="eyebrow">LESS GUESSING. BETTER NIGHTS.</p><h1>Where is it <em>LIT</em> right now?</h1><p>Find the energy. Pick your spot. Make the night yours.</p></section>
+    <section id="demo" aria-label="Interactive venue demo">
+      <div class="demo-bar"><span><i></i> INTERACTIVE DEMO</span><button id="reset" class="text-button">Reset demo ↺</button></div>
+      <p class="disclosure">Fictional NYC venues · Simulated activity · No account or location needed</p>
+      <div id="filters" class="filters" role="group" aria-label="Filter venue type"></div>
+      <div class="workspace">
+        <div class="map-panel"><div id="map" aria-label="NYC venue map"></div><div id="map-message" class="map-message"><p>Loading NYC map…</p></div><span class="map-caption">NEW YORK CITY / DEMO VENUES</span></div>
+        <aside class="venue-panel"><div class="panel-heading"><h2>Find your energy</h2><span id="result-count"></span></div><div id="venues" class="venues"></div></aside>
+      </div>
+      <div class="legend" aria-label="Estimated occupancy legend"><span><b style="color:#888">●</b> Quiet · 0</span><span><b style="color:#FFCC00">●</b> Mellow · below 40%</span><span><b style="color:#00FF88">●</b> Busy · 40–49%</span><span><b style="color:#FF3B30">●</b> LIT · 50%+</span></div>
+      <section id="detail" class="detail" aria-label="Selected venue"></section>
+      <p id="announcement" class="announcement" role="status" aria-live="polite">Try it: Afterglow Social is one simulated check-in away from LIT.</p>
+    </section>
+    <section class="below" id="built"><div><p class="eyebrow">FROM YOUR BROWSER TO YOUR POCKET</p><h2>The same idea.<br>A real iPhone app.</h2><p>LIT pairs maps with recent check-ins and short-lived experiences to answer one question: where should we go tonight?</p><div class="video-placeholder"><span>↗</span><div><strong>iPhone walkthrough</strong><p>Recording coming soon. Explore the interactive demo above in the meantime.</p></div></div></div><div class="engineering"><p class="eyebrow">BEHIND THE BUILD</p><h2>Built by Luis Feliz</h2><p>A nightlife discovery app built with React Native, Expo, TypeScript, and Firebase, with native Apple Maps on iPhone and MapKit JS on the web.</p><div class="tags"><span>React Native</span><span>Expo</span><span>TypeScript</span><span>Firebase</span><span>Apple MapKit</span></div><ul><li>Shared occupancy rules drive pin colors and venue status.</li><li>The real app uses a 100-meter check-in geofence and expiring posts.</li><li>This public demo keeps all simulated activity in browser memory.</li></ul><a href="https://github.com/Luisfeliz3/Lit" target="_blank" rel="noopener noreferrer">Explore the source on GitHub ↗</a></div></section>
+  </main><footer><a class="brand" href="#demo">LIT 🔥</a><span>Find your night. / A portfolio project by Luis Feliz</span></footer>
+  <noscript>This interactive demo needs JavaScript. Enable it and reload to explore fictional venues and simulate check-ins.</noscript>
+  <script type="module" src="./showcase/main.js"></script>
+</body>
+</html>
