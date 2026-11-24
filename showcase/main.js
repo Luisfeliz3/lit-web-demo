@@ -94,7 +94,7 @@ const renderDetail = () => {
     const metadata = document.createElement("p");
     metadata.textContent = `${venue.type} · ${venue.neighborhood} · ${venue.music}`;
     const counts = document.createElement("p");
-    counts.textContent = `${venue.currentCount} demo guests / ${venue.capacity} capacity · ${Math.round(venue.currentCount / venue.capacity * 100)}% occupancy`;
+    counts.textContent = `${venue.currentCount} demo guests / ${venue.capacity} capacity · ${Math.floor(venue.currentCount / venue.capacity * 100)}% occupancy`;
     const meter = document.createElement("div");
     meter.className = "meter";
     const progress = document.createElement("span");
