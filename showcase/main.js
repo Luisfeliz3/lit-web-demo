@@ -1,3 +1,4 @@
+import { createVenueExperience } from "./venueExperience.js";
 import { createDemoVenues, demoVibe, filterVenues, simulateCheckIn } from "./data.js";
 import { loadMapKit, isExpiredMapKitToken } from "../src/web/mapKit.js";
 import { mapToken } from "./config.js";
@@ -7,6 +8,7 @@ const element = (id) => {
         throw new Error(`Missing showcase element: ${id}`);
     return node;
 };
+const venueExperience = createVenueExperience();
 let venues = createDemoVenues();
 let filter = "All";
 let selectedId = venues[0].id;
@@ -123,7 +125,9 @@ const renderDetail = () => {
     simulate.disabled = venue.currentCount >= venue.capacity;
     const caption = document.createElement("small");
     caption.textContent = "Just a simulation. Reset anytime.";
-    actions.append(simulate, caption);
+    const explore = button("Explore venue →", () => venueExperience.open(venue));
+    explore.className = "explore-venue";
+    actions.append(simulate, caption, explore);
     panel.append(summary, activity, actions);
 };
 const render = () => {
@@ -158,6 +162,7 @@ const render = () => {
     renderPins();
 };
 element("reset").addEventListener("click", () => {
+    venueExperience.reset();
     venues = createDemoVenues();
     filter = "All";
     selectedId = venues[0].id;
